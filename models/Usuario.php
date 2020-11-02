@@ -78,8 +78,8 @@
         
         $offset = ($page - 1) * $limit;
         $sql = "SELECT * FROM " . self::TABLE_NAME . " u";
-        //$sql .= " INNER JOIN municipios m on m.idMunicipio = m.idMunicipio ";
-        //$sql .= " INNER JOIN departamentos dp ON dp.idDepartamento = m.idDepartamento ";
+        $sql .= " INNER JOIN municipios m on m.idMunicipio = u.idMunicipio ";
+        $sql .= " INNER JOIN departamentos dp ON dp.idDepartamento = u.idDepartamento ";
 
         $sql .= $this->createSqlFilter($filter);
         $sql .= $this->crateSqlSort($sort);
