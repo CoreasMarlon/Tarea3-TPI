@@ -20,14 +20,14 @@
                         <input type="text" name="nombre">
                     </div>
                     <div>
-                        <select name="miSelect">
+                        <select name="Departamento">
                         <?php foreach ($departamentosList as $key): ?>
                                 <option value="<?php echo $key->departamento?>"><?php echo $key->departamento?></option>
                             <?php endforeach ?>>
                         </select>
                     </div>
                     <div>
-                        <select name="" id="">
+                        <select name="Municipio">
                             <?php foreach ($municipiosList as $key): ?>
                                 <option value="<?php echo $key->municipio ?>"><?php echo $key->municipio ?></option>
                             <?php endforeach ?>>
