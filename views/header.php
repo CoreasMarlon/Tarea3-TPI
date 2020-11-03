@@ -21,10 +21,10 @@
             <form action="<?= BASE_DIR ?>Home/showHome" method="post">
                 <label for="">Order by: </label>
                 <select name="miSelect">
-                    <option value="value1">Mamiferos</option>
-                    <option value="value2">Aves</option>
-                    <option value="value3">Reptiles</option>
-                    <option value="value4">Peces</option>
+                    <option value="value1">Nombre</option>
+                    <option value="value2">Nombre (DESC)</option>
+                    <option value="value3">Departamento</option>
+                    <option value="value4">Departamento (DESC)</option>
                 </select>
                 <input type="submit" value="Filtrar" name="btnTipo">
             </form>

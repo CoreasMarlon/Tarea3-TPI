@@ -21,30 +21,34 @@
                     </div>
                     <div>
                         <select name="Departamento">
-                        <?php foreach ($departamentosList as $key): ?>
-                                <option value="<?php echo $key->departamento?>"><?php echo $key->departamento?></option>
-                            <?php endforeach ?>>
+                            <?php foreach ($departamentosList as $key) : ?>
+                                <option value="<?php echo $key->departamento ?>">
+                                    <?php echo $key->departamento ?>
+                                </option>
+                                <?php endforeach ?>>
                         </select>
                     </div>
                     <div>
                         <select name="Municipio">
-                            <?php foreach ($municipiosList as $key): ?>
-                                <option value="<?php echo $key->municipio ?>"><?php echo $key->municipio ?></option>
-                            <?php endforeach ?>>
+                            <?php foreach ($municipiosList as $key) : ?>
+                                <option value="<?php echo $key->municipio ?>">
+                                    <?php echo $key->municipio ?>
+                                </option>
+                                <?php endforeach ?>>
                         </select>
                     </div>
                     <div class="rol">
                         <div>
                             <label for="">Administrador</label>
-                            <input type="checkbox">
+                            <input name="cargo1" id="cargo1" value="Administrador" type="checkbox">
                         </div>
                         <div>
                             <label for="">Moderador</label>
-                            <input type="checkbox">
+                            <input name="cargo2" id="cargo2" value="Moderador" type="checkbox">
                         </div>
                         <div>
                             <label for="">Invitado</label>
-                            <input type="checkbox">
+                            <input name="cargo3" id="cargo3" value="Invitado" type="checkbox">
                         </div>
                     </div>
                 </div>
@@ -54,7 +58,7 @@
         </div>
     </div>
 
-    <table>
+    <table class="tabla tabla-outline-red">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -79,7 +83,5 @@
                 </tr>
             <?php endforeach ?>
         </tbody>
-    </table>
-
-    <?php var_dump($departamentosList) ?>
+    </table>    
 </main>

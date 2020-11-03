@@ -77,7 +77,45 @@ input, select{
     width: 70%;
 }
 
+
 .Ocultar {
     display: none;
 }
+
+.contenedor main .tabla {    
+    width: 100%;
+    text-align: center;    
+    border-collapse: collapse;    
+}
+
+.tabla td, .tabla th {
+    padding: 15px;
+}
+
+.tabla tbody > tr {
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.tabla tbody > tr:hover{
+    background: #f0f0f0;
+    color: #3b3732;
+}
+
+/* ESTILO NARANJA */
+.tabla-outline-red thead {
+    background:wheat;
+    color: dimgray;
+}
+
+ footer {
+    text-align: center;
+    padding: 50px;
+    background: tomato;
+    color: white;
+}
+
+footer p {
+    font-size: larger;
+}
+
 
