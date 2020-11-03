@@ -12,7 +12,7 @@
     <div class="contenedor">
         <header>
             <h1>Lista de usuarios</h1>
-            <form action="<?= BASE_DIR ?>Home/showHome" method="post">
+            <form action="<?= BASE_DIR ?>" method="post">
 
                 <label for="">Filtrar Filas</label>
                 <input type="text" placeholder="Buscar en esta tabla" name="buscar">
