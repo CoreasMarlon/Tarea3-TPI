@@ -31,7 +31,7 @@ class Departamento extends MySqlConnection
 
   public function list($filter = [])
   {
-    $sql = "SELECT * FROM " . self::TABLE_NAME . " dp";
+    $sql = "SELECT departamento FROM " . self::TABLE_NAME . " dp";
     $sql .= $this->createSqlFilter($filter);
     
     $data = array();

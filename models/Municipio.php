@@ -40,7 +40,7 @@ class Municipio extends MySqlConnection
 
   public function list($filter = [])
   {    
-    $sql = "SELECT * FROM " . self::TABLE_NAME . " m";
+    $sql = "SELECT municipio FROM " . self::TABLE_NAME . " m";
     $sql .= $this->createSqlFilter($filter);
 
     $data = array();
