@@ -73,17 +73,15 @@
         parent::__construct();
       }
     
-      public function list($page = 1, $limit = 20, $filter = [], $sort = [])
+      public function list($filter = [], $sort = [])
       {
         
-        $offset = ($page - 1) * $limit;
         $sql = "SELECT * FROM " . self::TABLE_NAME . " u";
         $sql .= " INNER JOIN municipios m on m.idMunicipio = u.idMunicipio ";
         $sql .= " INNER JOIN departamentos dp ON dp.idDepartamento = u.idDepartamento ";
 
         $sql .= $this->createSqlFilter($filter);
         $sql .= $this->crateSqlSort($sort);
-        $sql .= " limit " . $limit . " offset " . $offset;
         
         $data = array();
         if ($result = $this->db->query($sql, MYSQLI_USE_RESULT)) {
