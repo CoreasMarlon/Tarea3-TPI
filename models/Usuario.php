@@ -97,7 +97,7 @@
     
       private function createSqlFilter($filter) {
         $sql = "";
-        $filters = ['name', 'departamento', 'municipio']; // set available filters here
+        $filters = ['name', 'departamento', 'municipio', 'rol']; // set available filters here
         if (count($filter)) {
           $i = 0;
           foreach ($filter as $key => $value) {
@@ -115,7 +115,11 @@
                 case 'departamento':
                   $sql .= "dp.idDepartamento = " . $value ." "; 
                   break;
-
+                  /*
+                case 'rol':
+                  $sql .= "dp.idDepartamento = " . $value ." "; 
+                  break;
+                  */
                 default:
                   # code...
                   break;
