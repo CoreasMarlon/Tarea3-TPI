@@ -80,17 +80,3 @@ class Municipio extends MySqlConnection
   }
 }
 
-if (isset($_REQUEST['departamento'])) {
-  
-  $filter = ['departamento' => $_REQUEST['departamento'] ];
-
-  $municipio = new Municipio();
-  $list = $municipio->list($filter);
-
-  $html = '<option disabled selected>Municipio</option>';
-  foreach ($list as $municipios) { 
-      $html .= '<option value="' . $municipios->idMunicipio . '"> ' . $municipios->municipio . '</option>';
-  }
-  echo $html;
-}
-
