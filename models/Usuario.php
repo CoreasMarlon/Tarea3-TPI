@@ -75,7 +75,6 @@
     
       public function list($filter = [], $sort = [])
       {
-        
         $sql = "SELECT * FROM " . self::TABLE_NAME . " u";
         $sql .= " INNER JOIN municipios m on m.idMunicipio = u.idMunicipio ";
         $sql .= " INNER JOIN departamentos dp ON dp.idDepartamento = u.idDepartamento ";
@@ -137,7 +136,7 @@
           foreach ($rules as $key => $value) {
             $searchInFilters = array_search($key, $fields);
             if ($searchInFilters === false) $searchInFilters = -1;
-            echo "<br>";
+
             if ($searchInFilters >= 0  ) {
               $value = strtoupper($value);
               if ($value == 'ASC' || $value == 'DESC') $sql .= ($i == 0) ? " ORDER BY " : " , ";
