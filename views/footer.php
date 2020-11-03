@@ -1,6 +1,9 @@
-        <footer class="footer">
-            this is my footer
+       <footer>
+            <p>Jose Alejandro Ibañez Martinez</p>
         </footer>
-        <script src="<?=BASE_DIR?>assets/js/select.js"></script>
-    </body>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="<?= BASE_DIR ?>assets/js/main.js"></script>
+    <script src="<?= BASE_DIR ?>assets/js/select.js"></script>
+</body>
 </html>
