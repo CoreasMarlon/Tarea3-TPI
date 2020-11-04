@@ -13,7 +13,6 @@
       require_once "models/Municipio.php";
   
       $filter = (!isset($_GET['filter'])) ? [] : $_GET['filter'];
-
       $sort = ['name'=>'ASC'];
 
       if (count($_POST) > 0) {
@@ -32,6 +31,26 @@
         if(isset($_POST['letra'])){
           $letra = ['letra'=>(!isset($_POST['letra'])) ? [] : $_POST['letra']];
           $filter = array_merge($filter, $letra);
+        }
+
+
+        if (isset($_POST['ordenamiento'])) {
+          $valueSort = (!isset($_POST['ordenamiento'])) ? [] : $_POST['ordenamiento'];
+          
+          switch ($valueSort) {
+            case 'value1':
+              $sort = ['name'=>'ASC'];
+              break;
+            case 'value2':
+              $sort = ['name'=>'DESC']; 
+              break;
+            case 'value3':
+              $sort = ['departamento'=>'ASC'];  
+              break;
+            case 'value4':
+              $sort = ['departamento'=>'DESC']; 
+              break;
+          }
         }
       }
 

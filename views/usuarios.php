@@ -82,6 +82,14 @@
                     </div>
                 </div>
 
+                <select name="ordenamiento">
+                    <option disabled selected>Ordenar Por:</option>
+                    <option value="value1">Nombre (ASC)</option>
+                    <option value="value2">Nombre (DESC)</option>
+                    <option value="value3">Departamento (ASC)</option>
+                    <option value="value4">Departamento (DESC)</option>
+                </select>
+
                 <input type="submit" value="Filtrar" name="btnTipo">
                 <a class="limpiar" href="<?= BASE_DIR ?>" role="button">Restaurar</a>                
             </form>
@@ -95,7 +103,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Username</th>
-                <th scope="col">Cargo</th>
+                <th scope="col">Rol</th>
                 <th scope="col">Departamento</th>
                 <th scope="col">Municipio</th>
             </tr>
