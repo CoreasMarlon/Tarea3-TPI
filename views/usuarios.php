@@ -21,6 +21,8 @@
                     </div>
                     <div>
                         <select name="Departamento">
+                            <option value="">
+                            </option>
                             <?php foreach ($departamentosList as $key) : ?>
                                 <option value="<?php echo $key->departamento ?>">
                                     <?php echo $key->departamento ?>
