@@ -41,6 +41,7 @@ input, select{
 
 .contenedor main {    
     padding: 0 10px;
+    margin-top: 15px;
 }
 
 .contenedor .personalizado .moreOpcion{        
@@ -53,9 +54,18 @@ input, select{
     background-color:blanchedalmond;
 }
 
-.contenedor .personalizado .moreOpcion > form > input {
+.contenedor .personalizado .moreOpcion > form > input, .contenedor .personalizado .moreOpcion > form > .limpiar {
     padding: 10px 50px;
 }
+
+.contenedor .personalizado .moreOpcion > form > .limpiar {    
+    text-decoration: none;
+    color: black;
+    border-radius: 2px;
+    background-color: #f0f0f0;
+    border: 1px solid slategray;
+}
+
 .contenedor .personalizado .moreOpcion > form > .more {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
