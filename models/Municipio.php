@@ -39,8 +39,9 @@ class Municipio extends MySqlConnection
   }
 
   public function list($filter = [])
-  {    
-    $sql = "SELECT municipio FROM " . self::TABLE_NAME . " m";
+  {
+    
+    $sql = "SELECT * FROM " . self::TABLE_NAME . " m";
     $sql .= $this->createSqlFilter($filter);
 
     $data = array();
@@ -77,19 +78,5 @@ class Municipio extends MySqlConnection
     }
     return $sql;
   }
-}
-
-if (isset($_REQUEST['departamento'])) {
-  
-  $filter = ['departamento' => $_REQUEST['departamento'] ];
-
-  $municipio = new Municipio();
-  $list = $municipio->list($filter);
-
-  $html = '<option disabled selected>Municipio</option>';
-  foreach ($list as $municipios) { 
-      $html .= '<option value="' . $municipios->idMunicipio . '"> ' . $municipios->municipio . '</option>';
-  }
-  echo $html;
 }
 

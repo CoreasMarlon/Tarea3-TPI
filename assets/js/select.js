@@ -9,7 +9,7 @@
                 'Content-Type': 'application/json'
             }
         }
-        const request = await fetch(`filter.php?departamento=${departamentoId}`)
+        const request = await fetch(`/Tarea3-TPI/filter.php?departamento=${departamentoId}`)
         const selectOptions = await request.text()
         municipiosSelectInput.innerHTML = selectOptions
     })
