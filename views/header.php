@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
     <link rel="stylesheet" href="<?= BASE_DIR ?>assets/css/style.css">
 </head>
 
@@ -20,7 +21,7 @@
 
             <form action="<?= BASE_DIR ?>Home/showHome" method="post">
                 <label for="">Order by: </label>
-                <select name="miSelect">
+                <select name="ordenamiento">
                     <option value="value1">Nombre</option>
                     <option value="value2">Nombre (DESC)</option>
                     <option value="value3">Departamento</option>

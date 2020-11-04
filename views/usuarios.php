@@ -58,7 +58,7 @@
         </div>
     </div>
 
-    <table class="tabla tabla-outline-red">
+    <table class="tabla tabla-outline-red" id="tbl_usuarios">
         <thead>
             <tr>
                 <th scope="col">ID</th>
