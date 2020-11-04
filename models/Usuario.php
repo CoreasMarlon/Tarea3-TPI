@@ -94,7 +94,7 @@
     
       private function createSqlFilter($filter) {
         $sql = "";
-        $filters = ['name', 'departamento', 'municipio', 'rol']; // set available filters here
+        $filters = ['name', 'departamento', 'municipio', 'rol', 'letra']; // set available filters here
         if (count($filter)) {
           $i = 0;
           foreach ($filter as $key => $value) {
@@ -112,11 +112,13 @@
                 case 'departamento':
                   $sql .= "dp.idDepartamento = " . $value ." "; 
                   break;
-                  /*
                 case 'rol':
-                  $sql .= "dp.idDepartamento = " . $value ." "; 
+                  $sql .= "u.rol = " . $value ." ";
                   break;
-                  */
+                case 'letra':
+                  $sql .= "u.nombre LIKE '" . $value ."%'"; 
+                  break;
+
                 default:
                   # code...
                   break;

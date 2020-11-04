@@ -13,16 +13,25 @@
       require_once "models/Municipio.php";
   
       $filter = (!isset($_GET['filter'])) ? [] : $_GET['filter'];
+
       $sort = ['name'=>'ASC'];
 
       if (count($_POST) > 0) {
-        if (
-          isset($_POST['departamento']) && isset($_POST['municipio'])
-        ) {
+        if (isset($_POST['departamento'])) {
           $depto = (!isset($_POST['departamento'])) ? [] : $_POST['departamento'];
-          $mun = (!isset($_POST['municipio'])) ? [] : $_POST['municipio'];
-
-          $filter = ['departamento'=>$depto, 'municipio'=>$mun];
+          $filter = ['departamento'=>$depto];
+        }
+        if(isset($_POST['municipio'])){
+          $mun = ['municipio'=>(!isset($_POST['municipio'])) ? [] : $_POST['municipio']];
+          $filter = array_merge($filter, $mun);
+        }
+        if(isset($_POST['rol'])){
+          $rol = ['rol'=>(!isset($_POST['rol'])) ? [] : $_POST['rol']];
+          $filter = array_merge($filter, $rol);
+        }
+        if(isset($_POST['letra'])){
+          $letra = ['letra'=>(!isset($_POST['letra'])) ? [] : $_POST['letra']];
+          $filter = array_merge($filter, $letra);
         }
       }
 
@@ -32,8 +41,14 @@
       $departamentoModel = new Departamento();
       $municipiosModel = new Municipio();
       $departamentosList = $departamentoModel->list();
+
+      if (isset($filter['departamento'])) {
+        $municipiosFilter = ['departamento' => $filter['departamento']];
+        $municipiosList = $municipiosModel->list($municipiosFilter);
+      }
       
       $usuario = new Usuario();
+
       $list = $usuario->list($filter, $sort);
 
       require_once 'views/usuarios.php';
