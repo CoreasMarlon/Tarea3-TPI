@@ -132,7 +132,7 @@
     
       private function crateSqlSort($rules) {
         $sql = "";
-        $fields = ['id', 'name']; // set available filters here
+        $fields = ['name', 'departamento']; // set available filters here
         if (count($rules)) {
           $i = 0;
           foreach ($rules as $key => $value) {
@@ -143,11 +143,11 @@
               $value = strtoupper($value);
               if ($value == 'ASC' || $value == 'DESC') $sql .= ($i == 0) ? " ORDER BY " : " , ";
               switch ($key) {
-                case 'id':
-                  if ( $value == 'ASC' || $value == 'DESC' ) $sql .= " u.idUsuario " . $value ." "; 
-                  break;
                 case 'name':
                   if ( $value == 'ASC' || $value == 'DESC' ) $sql .= " u.nombre " . $value ." "; 
+                  break;
+                case 'departamento':
+                  if ( $value == 'ASC' || $value == 'DESC' ) $sql .= " dp.departamento " . $value ." "; 
                   break;
 
                 default:
