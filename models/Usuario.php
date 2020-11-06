@@ -75,7 +75,6 @@
     
       public function list($filter = [], $sort = [])
       {
-        
         $sql = "SELECT * FROM " . self::TABLE_NAME . " u";
         $sql .= " INNER JOIN municipios m on m.idMunicipio = u.idMunicipio ";
         $sql .= " INNER JOIN departamentos dp ON dp.idDepartamento = u.idDepartamento ";
@@ -95,7 +94,7 @@
     
       private function createSqlFilter($filter) {
         $sql = "";
-        $filters = ['name', 'departamento', 'municipio', 'rol']; // set available filters here
+        $filters = ['name', 'departamento', 'municipio', 'rol', 'letra']; // set available filters here
         if (count($filter)) {
           $i = 0;
           foreach ($filter as $key => $value) {
@@ -113,11 +112,13 @@
                 case 'departamento':
                   $sql .= "dp.idDepartamento = " . $value ." "; 
                   break;
-                  /*
                 case 'rol':
-                  $sql .= "dp.idDepartamento = " . $value ." "; 
+                  $sql .= "u.rol = " . $value ." ";
                   break;
-                  */
+                case 'letra':
+                  $sql .= "u.nombre LIKE '" . $value ."%'"; 
+                  break;
+
                 default:
                   # code...
                   break;
@@ -131,22 +132,22 @@
     
       private function crateSqlSort($rules) {
         $sql = "";
-        $fields = ['id', 'name']; // set available filters here
+        $fields = ['name', 'departamento']; // set available filters here
         if (count($rules)) {
           $i = 0;
           foreach ($rules as $key => $value) {
             $searchInFilters = array_search($key, $fields);
             if ($searchInFilters === false) $searchInFilters = -1;
-            echo "<br>";
+
             if ($searchInFilters >= 0  ) {
               $value = strtoupper($value);
               if ($value == 'ASC' || $value == 'DESC') $sql .= ($i == 0) ? " ORDER BY " : " , ";
               switch ($key) {
-                case 'id':
-                  if ( $value == 'ASC' || $value == 'DESC' ) $sql .= " u.idUsuario " . $value ." "; 
-                  break;
                 case 'name':
                   if ( $value == 'ASC' || $value == 'DESC' ) $sql .= " u.nombre " . $value ." "; 
+                  break;
+                case 'departamento':
+                  if ( $value == 'ASC' || $value == 'DESC' ) $sql .= " dp.departamento " . $value ." "; 
                   break;
 
                 default:
