@@ -52,6 +52,11 @@ input, select{
 }
 .contenedor main .personalizado {
     background-color:blanchedalmond;
+    -moz-border-radius: 21px;
+    -webkit-border-radius: 21px;
+    border-radius: 21px;
+   
+
 }
 
 .contenedor .personalizado .moreOpcion > form > input, .contenedor .personalizado .moreOpcion > form > .limpiar {
@@ -69,7 +74,8 @@ input, select{
 .contenedor .personalizado .moreOpcion > form > .more {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 30px 100px;        
+    grid-template-rows: 30px 100px;    
+    font-weight: bold;    
 }
 
 .contenedor .personalizado .moreOpcion > form > .more > div {
@@ -118,14 +124,129 @@ input, select{
 }
 
  footer {
+    
+    width: 100%;
     text-align: center;
     padding: 50px;
     background: tomato;
     color: white;
+    
 }
 
 footer p {
     font-size: larger;
 }
+/*---- Estilos de los Select----*/
+.select {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 100%;
+}    .select select {
+        font-family: 'Arial';
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        padding: 12px 22px;
+        outline: 0;
+        border: 1px solid #000000;
+        -moz-border-radius: 22px;
+        -webkit-border-radius: 22px;
+        border-radius: 22px;
+        background: #ffffff;
+        color: #000000;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+        .select select::-ms-expand {
+            display: none;
+        }
+        .select select:hover,
+        .select select:focus {
+            color: #000000;
+            background: #e9e9e9;
+        }
+        .select select:disabled {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+.select_arrow {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    width: 11px;
+    height: 11px;
+    border: solid #000000;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+    border-color: #000000;
+}
+.select select:disabled ~ .select_arrow {
+    border-top-color: #cccccc;
+}
 
+/*-- Estilo de los botones--*/
 
+.btnFiltrar{
+        font-weight: bold;
+        color: #000000 !important;
+        font-size: 14px;
+        padding: 10px 19px;
+        -moz-border-radius: 21px;
+        -webkit-border-radius: 21px;
+        border-radius: 21px;
+        background: #d7d7d7;
+      
+      }
+      .btnFiltrar:hover {
+        color: #000000 !important;
+        background: #9ce9a9;     
+      }
+
+.btnLimpiar{
+ 
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000 !important;
+    font-size: 14px;
+    padding: 10px 19px;
+    -moz-border-radius: 21px;
+    -webkit-border-radius: 21px;
+    border-radius: 21px;
+    background: #d7d7d7;
+    border: 1px solid #000000;
+   
+  }
+  .btnLimpiar:hover {
+    color: #000000 !important;
+    background: #87b7e5;
+  }
+
+/*-- Estilo del div de la tabla--*/
+
+.resultados{
+
+    width: 80%;
+    display: block; 
+    margin: 25px auto 25px auto;
+    overflow-x: auto;
+    background-color: #ffffff;
+
+    
+}
+
+.aviso{
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #df5018;
+    background-color: #f5e345;
+    text-align: center;
+}
