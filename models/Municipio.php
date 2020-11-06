@@ -1,9 +1,9 @@
 <?php
-require_once "database/MySqlConnection.php";
+require_once "./database/MySqlConnection.php";
 
 class Municipio extends MySqlConnection
 {
-  const TABLE_NAME = 'tbl_municipio';
+  const TABLE_NAME = 'municipios';
 
   private $idMunicipio;
   private $municipio;
@@ -38,15 +38,10 @@ class Municipio extends MySqlConnection
     parent::__construct();    
   }
 
-  public function list($page = 1, $limit = 20, $filter = [], $sort = [])
-  {
-    
-    $offset = ($page - 1) * $limit;
-    $sql = "SELECT * FROM " . self::TABLE_NAME . " m";
-
+  public function list($filter = [])
+  {    
+    $sql = "SELECT municipio FROM " . self::TABLE_NAME . " m";
     $sql .= $this->createSqlFilter($filter);
-    $sql .= $this->crateSqlSort($sort);
-    $sql .= " limit " . $limit . " offset " . $offset;
 
     $data = array();
     if ($result = $this->db->query($sql, MYSQLI_USE_RESULT)) {
@@ -70,10 +65,10 @@ class Municipio extends MySqlConnection
           $sql .= ($i == 0 ) ? " WHERE " : " AND ";
           switch ($key) {
             case 'name':
-              $sql .= "m.nombre_municipio LIKE '%" . $value ."%'"; 
+              $sql .= "m.municipio LIKE '%" . $value ."%'"; 
               break;
             case 'departamento':
-              $sql .= "m.id_departamento = " . $value ." "; 
+              $sql .= "m.idDepartamento = " . $value ." "; 
               break;
           }
         }
@@ -82,39 +77,19 @@ class Municipio extends MySqlConnection
     }
     return $sql;
   }
+}
 
-  private function crateSqlSort($rules) {
-    $sql = "";
-    $fields = ['id', 'name', 'departamento']; // set available filters here
-    if (count($rules)) {
-      $i = 0;
-      foreach ($rules as $key => $value) {
-        $searchInFilters = array_search($key, $fields);
-        if ($searchInFilters === false) $searchInFilters = -1;
-        echo "<br>";
-        if ($searchInFilters >= 0  ) {
-          $value = strtoupper($value);
-          if ($value == 'ASC' || $value == 'DESC') $sql .= ($i == 0) ? " ORDER BY " : " , ";
-          switch ($key) {
-            case 'id':
-              if ( $value == 'ASC' || $value == 'DESC' ) $sql .= " m.id_municipio " . $value ." "; 
-              break;
-            case 'name':
-              if ( $value == 'ASC' || $value == 'DESC' ) $sql .= " m.nombre_municipio " . $value ." "; 
-              break;
-            case 'departamento':
-              if ( $value == 'ASC' || $value == 'DESC' ) $sql .= " m.id_departamento " . $value ." "; 
-              break;
-            
-            default:
-              # code...
-              break;
-          }
-        }
-        $i++;
-      }
-    }
-    return $sql;
+if (isset($_REQUEST['departamento'])) {
+  
+  $filter = ['departamento' => $_REQUEST['departamento'] ];
+
+  $municipio = new Municipio();
+  $list = $municipio->list($filter);
+
+  $html = '<option disabled selected>Municipio</option>';
+  foreach ($list as $municipios) { 
+      $html .= '<option value="' . $municipios->idMunicipio . '"> ' . $municipios->municipio . '</option>';
   }
+  echo $html;
 }
 

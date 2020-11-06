@@ -10,4 +10,3 @@ JOINS obligatoriamente).
 
 4. La clase debe estar bien diseñada, y sus métodos deben recibir parámetros
 (por ejemplo **function listar($nombreTabla, $departamento)**) y esos parámetros los utilizará en las consultas a la BD.
-
