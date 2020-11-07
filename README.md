@@ -22,4 +22,5 @@ JOINS obligatoriamente).
 
 ### Instrucciones:
 * Se esta usando una Base de Datos en MySQL la cual se puede importar del archivo "db_poblacion.sql" que se encuentra en la carpeta "database", contiene los datos de los departamentos y municipios del pais.
+* Se debe de usar el servidor local Xampp, por lo que los archivos se deben de encontrar en una carpeta con el nombre "Tarea3-TPI" dentro de la carpeta "htdocs" (a menos que se tenga configurado en otra carpeta).
 * En caso que a la hora de importar la Base de Datos de un error, se debe de crear una Base de Datos con el nombre "db_pablacion" y dentro de esta hacer la importación del archivo "db_pablacion.sql"
