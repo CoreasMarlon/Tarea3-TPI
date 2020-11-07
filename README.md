@@ -3,11 +3,11 @@
 ## TÉCNICAS DE PROGRAMACIÓN PARA INTERNET, CICLO II 2020 3° TAREA EX-AULA
 
 ### Integrantes:
-* Marlon Salomon Coreas Villanueva
-* José Alejandro Ibañez MArtinez
-* Carlos Ivan Romero
-* Carlos Alfonso Lemuz Rodesno
-* José Adolfo Guzamn Solis
+* Marlon Salomón Coreas Villanueva CV18035
+* José Alejandro Ibáñez MArtínez IM18002
+* Carlos Iván Romero Hernández RH18030
+* Carlos Alfonso Lemus Rodezno LR1800
+* José Adolfo Guzamn Solis GS18030
 
 ### Requerimientos:
 1. Listar todos sus usuarios alfabéticamente (por su nombre)
