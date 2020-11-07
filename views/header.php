@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tarea 3 TPI</title>
+    <link rel="stylesheet" href="<?= BASE_DIR ?>assets/css/style.css">
 </head>
+
 <body>
-    <header>
-        This is my header
-    </header>
+    <div class="contenedor">
+        <header>
+            <h1>Lista de usuarios</h1>
+        </header>

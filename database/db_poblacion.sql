@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 02, 2020 at 10:37 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.9
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 07-11-2020 a las 18:29:24
+-- Versión del servidor: 10.4.14-MariaDB
+-- Versión de PHP: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_poblacion`
+-- Base de datos: `db_poblacion`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `departamentos`
+-- Estructura de tabla para la tabla `departamentos`
 --
 
 CREATE TABLE `departamentos` (
@@ -33,29 +33,29 @@ CREATE TABLE `departamentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `departamentos`
+-- Volcado de datos para la tabla `departamentos`
 --
 
 INSERT INTO `departamentos` (`idDepartamento`, `departamento`) VALUES
-(1, 'San Salvador'),
-(2, 'San Miguel'),
-(3, 'Santa Ana'),
-(4, 'Usulután'),
-(5, 'Morazán'),
-(6, 'La Unión'),
-(7, 'La Libertad'),
-(8, 'Cabañas'),
-(9, 'San Vicente'),
-(10, 'Chalatenango'),
-(11, 'La Paz'),
-(12, 'Sonsonate'),
-(13, 'Ahuachapán'),
-(14, 'Cuscatlán');
+(1, 'Ahuachapán'),
+(2, 'Santa Ana'),
+(3, 'Sonsonate'),
+(4, 'La Libertad'),
+(5, 'Chalatenango'),
+(6, 'San Salvador'),
+(7, 'Cuscatlán'),
+(8, 'La Paz'),
+(9, 'Cabañas'),
+(10, 'San Vicente'),
+(11, 'Usulután'),
+(12, 'Morazán'),
+(13, 'San Miguel'),
+(14, 'La Unión');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `municipios`
+-- Estructura de tabla para la tabla `municipios`
 --
 
 CREATE TABLE `municipios` (
@@ -65,154 +65,277 @@ CREATE TABLE `municipios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `municipios`
+-- Volcado de datos para la tabla `municipios`
 --
 
 INSERT INTO `municipios` (`idMunicipio`, `municipio`, `idDepartamento`) VALUES
-(1, 'San Salvador', 1),
-(2, 'Aguilares', 1),
-(3, 'Apopa', 1),
-(4, 'Ayutuxtepeque', 1),
-(5, 'Cuscatancingo', 1),
-(6, 'San Martin', 1),
-(7, 'Cuscatancingo', 1),
-(8, 'San Martin', 1),
-(9, 'Mejicanos', 1),
-(10, 'Soyapango', 1),
-(11, 'San Miguel', 2),
-(12, 'Carolina', 2),
-(13, 'Chinameca', 2),
-(14, 'Chirilagua', 2),
-(15, 'Ciudad Barrios', 2),
-(16, 'Comacarán', 2),
-(17, 'Moncagua', 2),
-(18, 'El tránsito', 2),
-(19, 'Quelepa', 2),
-(20, 'San Jorge', 2),
-(21, 'El Congo', 3),
-(22, 'Chalchuapa', 3),
-(23, 'Candelaria de la Frontera', 3),
-(24, 'Coatepeque', 3),
-(25, 'Metapán', 3),
-(26, 'Texistepeque', 3),
-(27, 'Santa Ana', 3),
-(28, 'Masahuat', 3),
-(29, 'El Porvenir', 3),
-(30, 'San Antonio Pajonal', 3),
-(31, 'Alegría', 4),
-(32, 'Berlín', 4),
-(33, 'California', 4),
-(34, 'Concepción Batres', 4),
-(35, 'El Triunfo', 4),
-(36, 'Ereguayquín', 4),
-(37, 'Estanzuelas', 4),
-(38, 'Jiquilisco', 4),
-(39, 'Jucuapa', 4),
-(40, 'Usulután', 4),
-(41, 'Arambala', 5),
-(42, 'Perquín', 5),
-(43, 'Osicala', 5),
-(44, 'Lolotiquillo', 5),
-(45, 'Jocoro', 5),
-(46, 'Jocoaitique', 5),
-(47, 'El Divisadero', 5),
-(48, 'El Rosario', 5),
-(49, 'Cacaopera', 5),
-(50, 'San Francisco Gotera', 5),
-(51, 'Anamorós', 6),
-(52, 'Bolívar', 6),
-(53, 'Concepción de Oriente', 6),
-(54, 'Conchagua', 6),
-(55, 'El Carmen', 6),
-(56, 'El Sauce', 6),
-(57, 'Intipucá', 6),
-(58, 'La Unión', 6),
-(59, 'Lislique', 6),
-(60, 'Pasaquina', 6),
-(61, 'Antiguo Cuscatlán', 7),
-(62, 'Quezaltepeque', 7),
-(63, 'Ciudad Arce', 7),
-(64, 'Colón', 7),
-(65, 'Comasagua', 7),
-(66, 'Huizúcar', 7),
-(67, 'Jayaque', 7),
-(68, 'Zaragoza', 7),
-(69, 'La Libertad', 7),
-(70, 'Santa Tecla', 7),
-(71, 'Victoria', 8),
-(72, 'Tejutepeque', 8),
-(73, 'Sensuntepeque', 8),
-(74, 'San Isidro', 8),
-(75, 'Jutiapa', 8),
-(76, 'Ilobasco', 8),
-(77, 'Cinquera', 8),
-(78, 'Dolores', 8),
-(79, 'Guacotecti', 8),
-(80, 'Verapaz', 9),
-(81, 'Tecoluca', 9),
-(82, 'Tepetitán', 9),
-(83, 'Santo Domingo', 9),
-(84, 'Santa Clara', 9),
-(85, 'San Vicente', 9),
-(86, 'San Sebastián', 9),
-(87, 'San Ildefonso', 9),
-(88, 'San Lorenzo', 9),
-(89, 'Apastepeque', 9),
-(90, 'Tejutla', 10),
-(91, 'Santa Rita', 10),
-(92, 'San Rafael', 10),
-(93, 'Chalatenango', 10),
-(94, 'San Ignacio', 10),
-(95, 'San Francisco Lempa', 10),
-(96, 'Nueva Trinidad', 10),
-(97, 'Nueva Concepción', 10),
-(98, 'Comalapa', 10),
-(99, 'El Carrizal', 10),
-(100, 'Zacatecoluca', 11),
-(101, 'Santiago Nonualco', 11),
-(102, 'Santa María Ostuma', 11),
-(103, 'San Luis Talpa', 11),
-(104, 'San Juan Tepezontes', 11),
-(105, 'San Antonio Masahuat', 11),
-(106, 'Olocuilta', 11),
-(107, 'Jerusalén', 11),
-(108, 'El Rosario', 11),
-(109, 'Mercedes la Ceiba', 11),
-(110, 'Sonzacate', 12),
-(111, 'Sonsonate', 12),
-(112, 'San Julián', 12),
-(113, 'Nahuizalco', 12),
-(114, 'San Antonio del Monte', 12),
-(115, 'Armenia', 12),
-(116, 'Salcoatitán', 12),
-(117, 'Juayúa', 12),
-(118, 'Izalco', 12),
-(119, 'Acajutla', 12),
-(120, 'Ahuachapán', 13),
-(121, 'Turín', 13),
-(122, 'Tacuba', 13),
-(123, 'San Pedro Puxtla', 13),
-(124, 'San Lorenzo', 13),
-(125, 'Guaymango', 13),
-(126, 'Concepción de Ataco', 13),
-(127, 'Jujutla', 13),
-(128, 'Apaneca', 13),
-(129, 'Atiquizaya', 13),
-(130, 'Tenancingo', 14),
-(131, 'Suchitoto', 14),
-(132, 'Santa Cruz Michapa', 14),
-(133, 'San Ramón', 14),
-(134, 'San Rafael Cedros', 14),
-(135, 'San Pedro Perulapán', 14),
-(136, 'San Cristóbal', 14),
-(137, 'Cojutepeque', 14),
-(138, 'Candelaria', 14),
-(139, 'El Carmen', 14);
+(1, 'Ahuachapán', 1),
+(2, 'Jujutla', 1),
+(3, 'Atiquizaya', 1),
+(4, 'Concepción de Ataco', 1),
+(5, 'El Refugio', 1),
+(6, 'Guaymango', 1),
+(7, 'Apaneca', 1),
+(8, 'San Francisco Menéndez', 1),
+(9, 'San Lorenzo', 1),
+(10, 'San Pedro Puxtla', 1),
+(11, 'Tacuba', 1),
+(12, 'Turín', 1),
+(13, 'Candelaria de la Frontera', 2),
+(14, 'Chalchuapa', 2),
+(15, 'Coatepeque', 2),
+(16, 'El Congo', 2),
+(17, 'El Porvenir', 2),
+(18, 'Masahuat', 2),
+(19, 'Metapán', 2),
+(20, 'San Antonio Pajonal', 2),
+(21, 'San Sebastián Salitrillo', 2),
+(22, 'Santa Ana', 2),
+(23, 'Santa Rosa Guachipilín', 2),
+(24, 'Santiago de la Frontera', 2),
+(25, 'Texistepeque', 2),
+(26, 'Acajutla', 3),
+(27, 'Armenia', 3),
+(28, 'Caluco', 3),
+(29, 'Cuisnahuat', 3),
+(30, 'Izalco', 3),
+(31, 'Juayúa', 3),
+(32, 'Nahuizalco', 3),
+(33, 'Nahulingo', 3),
+(34, 'Salcoatitán', 3),
+(35, 'San Antonio del Monte', 3),
+(36, 'San Julián', 3),
+(37, 'Santa Catarina Masahuat', 3),
+(38, 'Santa Isabel Ishuatán', 3),
+(39, 'Santo Domingo de Guzmán', 3),
+(40, 'Sonsonate', 3),
+(41, 'Sonzacate', 3),
+(42, 'Alegría', 11),
+(43, 'Berlín', 11),
+(44, 'California', 11),
+(45, 'Concepción Batres', 11),
+(46, 'El Triunfo', 11),
+(47, 'Ereguayquín', 11),
+(48, 'Estanzuelas', 11),
+(49, 'Jiquilisco', 11),
+(50, 'Jucuapa', 11),
+(51, 'Jucuarán', 11),
+(52, 'Mercedes Umaña', 11),
+(53, 'Nueva Granada', 11),
+(54, 'Ozatlán', 11),
+(55, 'Puerto El Triunfo', 11),
+(56, 'San Agustín', 11),
+(57, 'San Buenaventura', 11),
+(58, 'San Dionisio', 11),
+(59, 'San Francisco Javier', 11),
+(60, 'Santa Elena', 11),
+(61, 'Santa María', 11),
+(62, 'Santiago de María', 11),
+(63, 'Tecapán', 11),
+(64, 'Usulután', 11),
+(65, 'Carolina', 13),
+(66, 'Chapeltique', 13),
+(67, 'Chinameca', 13),
+(68, 'Chirilagua', 13),
+(69, 'Ciudad Barrios', 13),
+(70, 'Comacarán', 13),
+(71, 'El Tránsito', 13),
+(72, 'Lolotique', 13),
+(73, 'Moncagua', 13),
+(74, 'Nueva Guadalupe', 13),
+(75, 'Nuevo Edén de San Juan', 13),
+(76, 'Quelepa', 13),
+(77, 'San Antonio del Mosco', 13),
+(78, 'San Gerardo', 13),
+(79, 'San Jorge', 13),
+(80, 'San Luis de la Reina', 13),
+(81, 'San Miguel', 13),
+(82, 'San Rafael Oriente', 13),
+(83, 'Sesori', 13),
+(84, 'Uluazapa', 13),
+(85, 'Arambala', 12),
+(86, 'Cacaopera', 12),
+(87, 'Chilanga', 12),
+(88, 'Corinto', 12),
+(89, 'Delicias de Concepción', 12),
+(90, 'El Divisadero', 12),
+(91, 'El Rosario (Morazán)', 12),
+(92, 'Gualococti', 12),
+(93, 'Guatajiagua', 12),
+(94, 'Joateca', 12),
+(95, 'Jocoaitique', 12),
+(96, 'Jocoro', 12),
+(97, 'Lolotiquillo', 12),
+(98, 'Meanguera', 12),
+(99, 'Osicala', 12),
+(100, 'Perquín', 12),
+(101, 'San Carlos', 12),
+(102, 'San Fernando (Morazán)', 12),
+(103, 'San Francisco Gotera', 12),
+(104, 'San Isidro (Morazán)', 12),
+(105, 'San Simón', 12),
+(106, 'Sensembra', 12),
+(107, 'Sociedad', 12),
+(108, 'Torola', 12),
+(109, 'Yamabal', 12),
+(110, 'Yoloaiquín', 12),
+(111, 'La Unión', 14),
+(112, 'San Alejo', 14),
+(113, 'Yucuaiquín', 14),
+(114, 'Conchagua', 14),
+(115, 'Intipucá', 14),
+(116, 'San José', 14),
+(117, 'El Carmen (La Unión)', 14),
+(118, 'Yayantique', 14),
+(119, 'Bolívar', 14),
+(120, 'Meanguera del Golfo', 14),
+(121, 'Santa Rosa de Lima', 14),
+(122, 'Pasaquina', 14),
+(123, 'Anamoros', 14),
+(124, 'Nueva Esparta', 14),
+(125, 'El Sauce', 14),
+(126, 'Concepción de Oriente', 14),
+(127, 'Polorós', 14),
+(128, 'Lislique', 14),
+(129, 'Antiguo Cuscatlán', 4),
+(130, 'Chiltiupán', 4),
+(131, 'Ciudad Arce', 4),
+(132, 'Colón', 4),
+(133, 'Comasagua', 4),
+(134, 'Huizúcar', 4),
+(135, 'Jayaque', 4),
+(136, 'Jicalapa', 4),
+(137, 'La Libertad', 4),
+(138, 'Santa Tecla', 4),
+(139, 'Nuevo Cuscatlán', 4),
+(140, 'San Juan Opico', 4),
+(141, 'Quezaltepeque', 4),
+(142, 'Sacacoyo', 4),
+(143, 'San José Villanueva', 4),
+(144, 'San Matías', 4),
+(145, 'San Pablo Tacachico', 4),
+(146, 'Talnique', 4),
+(147, 'Tamanique', 4),
+(148, 'Teotepeque', 4),
+(149, 'Tepecoyo', 4),
+(150, 'Zaragoza', 4),
+(151, 'Agua Caliente', 5),
+(152, 'Arcatao', 5),
+(153, 'Azacualpa', 5),
+(154, 'Cancasque', 5),
+(155, 'Chalatenango', 5),
+(156, 'Citalá', 5),
+(157, 'Comapala', 5),
+(158, 'Concepción Quezaltepeque', 5),
+(159, 'Dulce Nombre de María', 5),
+(160, 'El Carrizal', 5),
+(161, 'El Paraíso', 5),
+(162, 'La Laguna', 5),
+(163, 'La Palma', 5),
+(164, 'La Reina', 5),
+(165, 'Las Vueltas', 5),
+(166, 'Nueva Concepción', 5),
+(167, 'Nueva Trinidad', 5),
+(168, 'Nombre de Jesús', 5),
+(169, 'Ojos de Agua', 5),
+(170, 'Potonico', 5),
+(171, 'San Antonio de la Cruz', 5),
+(172, 'San Antonio Los Ranchos', 5),
+(173, 'San Fernando (Chalatenango)', 5),
+(174, 'San Francisco Lempa', 5),
+(175, 'San Francisco Morazán', 5),
+(176, 'San Ignacio', 5),
+(177, 'San Isidro Labrador', 5),
+(178, 'Las Flores', 5),
+(179, 'San Luis del Carmen', 5),
+(180, 'San Miguel de Mercedes', 5),
+(181, 'San Rafael', 5),
+(182, 'Santa Rita', 5),
+(183, 'Tejutla', 5),
+(184, 'Cojutepeque', 7),
+(185, 'Candelaria', 7),
+(186, 'El Carmen (Cuscatlán)', 7),
+(187, 'El Rosario (Cuscatlán)', 7),
+(188, 'Monte San Juan', 7),
+(189, 'Oratorio de Concepción', 7),
+(190, 'San Bartolomé Perulapía', 7),
+(191, 'San Cristóbal', 7),
+(192, 'San José Guayabal', 7),
+(193, 'San Pedro Perulapán', 7),
+(194, 'San Rafael Cedros', 7),
+(195, 'San Ramón', 7),
+(196, 'Santa Cruz Analquito', 7),
+(197, 'Santa Cruz Michapa', 7),
+(198, 'Suchitoto', 7),
+(199, 'Tenancingo', 7),
+(200, 'Aguilares', 6),
+(201, 'Apopa', 6),
+(202, 'Ayutuxtepeque', 6),
+(203, 'Cuscatancingo', 6),
+(204, 'Ciudad Delgado', 6),
+(205, 'El Paisnal', 6),
+(206, 'Guazapa', 6),
+(207, 'Ilopango', 6),
+(208, 'Mejicanos', 6),
+(209, 'Nejapa', 6),
+(210, 'Panchimalco', 6),
+(211, 'Rosario de Mora', 6),
+(212, 'San Marcos', 6),
+(213, 'San Martín', 6),
+(214, 'San Salvador', 6),
+(215, 'Santiago Texacuangos', 6),
+(216, 'Santo Tomás', 6),
+(217, 'Soyapango', 6),
+(218, 'Tonacatepeque', 6),
+(219, 'Zacatecoluca', 8),
+(220, 'Cuyultitán', 8),
+(221, 'El Rosario (La Paz)', 8),
+(222, 'Jerusalén', 8),
+(223, 'Mercedes La Ceiba', 8),
+(224, 'Olocuilta', 8),
+(225, 'Paraíso de Osorio', 8),
+(226, 'San Antonio Masahuat', 8),
+(227, 'San Emigdio', 8),
+(228, 'San Francisco Chinameca', 8),
+(229, 'San Pedro Masahuat', 8),
+(230, 'San Juan Nonualco', 8),
+(231, 'San Juan Talpa', 8),
+(232, 'San Juan Tepezontes', 8),
+(233, 'San Luis La Herradura', 8),
+(234, 'San Luis Talpa', 8),
+(235, 'San Miguel Tepezontes', 8),
+(236, 'San Pedro Nonualco', 8),
+(237, 'San Rafael Obrajuelo', 8),
+(238, 'Santa María Ostuma', 8),
+(239, 'Santiago Nonualco', 8),
+(240, 'Tapalhuaca', 8),
+(241, 'Cinquera', 9),
+(242, 'Dolores', 9),
+(243, 'Guacotecti', 9),
+(244, 'Ilobasco', 9),
+(245, 'Jutiapa', 9),
+(246, 'San Isidro (Cabañas)', 9),
+(247, 'Sensuntepeque', 9),
+(248, 'Tejutepeque', 9),
+(249, 'Victoria', 9),
+(250, 'Apastepeque', 10),
+(251, 'Guadalupe', 10),
+(252, 'San Cayetano Istepeque', 10),
+(253, 'San Esteban Catarina', 10),
+(254, 'San Ildefonso', 10),
+(255, 'San Lorenzo', 10),
+(256, 'San Sebastián', 10),
+(257, 'San Vicente', 10),
+(258, 'Santa Clara', 10),
+(259, 'Santo Domingo', 10),
+(260, 'Tecoluca', 10),
+(261, 'Tepetitán', 10),
+(262, 'Verapaz', 10);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -226,36 +349,44 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`idUsuario`, `nombre`, `apellido`, `nombreUsuario`, `rol`, `idDepartamento`, `idMunicipio`) VALUES
-(10, 'Jose', 'Guzmán ', 'joseG', 'Moderador', 1, 32),
-(11, 'Jose', 'Martinez', 'joseM', 'Moderador', 2, 11),
-(12, 'Oscar', 'Lemus', 'oscarL', 'Invitado', 4, 39),
-(13, 'Ivan', 'Romero', 'ivanR', 'Moderador', 4, 32),
-(14, 'Marlon ', 'Coreas', 'marlonC', 'Administrador', 4, 37),
-(15, 'Angel', 'Ruiz ', 'angelRuiz', 'Moderador', 2, 11);
+(1, 'Jose', 'Guzmán ', 'joseG', 'Moderador', 11, 43),
+(2, 'Jose', 'Martinez', 'joseM', 'Moderador', 13, 81),
+(3, 'Oscar', 'Lemus', 'oscarL', 'Invitado', 11, 50),
+(4, 'Ivan', 'Romero', 'ivanR', 'Moderador', 11, 62),
+(5, 'Marlon ', 'Coreas', 'marlonC', 'Administrador', 11, 48),
+(6, 'Angel', 'Ruiz ', 'angelRuiz', 'Moderador', 13, 81),
+(16, 'Andres', 'Clemente', 'andresC', 'Administrador', 13, 81),
+(17, 'Maria', 'Rosello', 'mariaR', 'Invitado', 11, 43),
+(18, 'Ruth ', 'González ', 'ruthG', 'Administrador', 11, 43),
+(19, 'Iratxe', 'Navarrete', 'IratxeN', 'Administrador', 6, 214),
+(20, 'Isidro', 'González ', 'IsidroG', 'Invitado', 6, 210),
+(21, 'Omar', 'Campos', 'omarP', 'Moderador', 1, 7),
+(22, 'Estela', 'Pellicer', 'estelaP', 'Administrador', 1, 11),
+(23, 'Marcela', 'Canales', 'marcelaC', 'Invitado', 8, 224);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `departamentos`
+-- Indices de la tabla `departamentos`
 --
 ALTER TABLE `departamentos`
   ADD PRIMARY KEY (`idDepartamento`);
 
 --
--- Indexes for table `municipios`
+-- Indices de la tabla `municipios`
 --
 ALTER TABLE `municipios`
   ADD PRIMARY KEY (`idMunicipio`),
   ADD KEY `departamento-municipio` (`idDepartamento`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`idUsuario`),
@@ -263,39 +394,39 @@ ALTER TABLE `usuarios`
   ADD KEY `usuario-municipio` (`idMunicipio`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `departamentos`
+-- AUTO_INCREMENT de la tabla `departamentos`
 --
 ALTER TABLE `departamentos`
   MODIFY `idDepartamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `municipios`
+-- AUTO_INCREMENT de la tabla `municipios`
 --
 ALTER TABLE `municipios`
-  MODIFY `idMunicipio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
+  MODIFY `idMunicipio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=263;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `municipios`
+-- Filtros para la tabla `municipios`
 --
 ALTER TABLE `municipios`
   ADD CONSTRAINT `departamento-municipio` FOREIGN KEY (`idDepartamento`) REFERENCES `departamentos` (`idDepartamento`);
 
 --
--- Constraints for table `usuarios`
+-- Filtros para la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuario-departamento` FOREIGN KEY (`idDepartamento`) REFERENCES `departamentos` (`idDepartamento`),
